@@ -7,7 +7,7 @@ const imageData = {
     },
     2: {
         title: "Warmth",
-        description: "Idi napan ta nag ramen idjay Robinsons love ko hahahaha",
+        description: "Idi napan ta nag ramen idjay Robinsons love ko hahahaha.",
         image: "images/love2.jpg"
     },
     3: {
