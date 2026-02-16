@@ -2,42 +2,42 @@
 const imageData = {
     1: {
         title: "Love",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. Ut sit amet vulputate felis. Vivamus nec turpis ut odio venenatis laoreet. Duis in pellentesque magna. Suspendisse potenti. Donec tincidunt eros in tempor volutpat. Maecenas dignissim lorem vel eros fermentum, a auctor lectus molestie.",
+        description: "First Date Natin sa Vigan my love hahaha + Bembang haahahahahahah",
         image: "images/love.jpg"
     },
     2: {
         title: "Warmth",
-        description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+        description: "Idi napan ta nag ramen idjay Robinsons love ko hahahaha",
         image: "images/love2.jpg"
     },
     3: {
         title: "Passion",
-        description: "Wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquid ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore.",
+        description: "Jak malagip nu anya binuya ta love hahaha basta napan ta nag sine buya idi.",
         image: "images/love2.jpg"
     },
     4: {
         title: "Joy",
-        description: "Vel eu felis aperiam, nonummy nibh fringilla semper wisi in mauris sed lobortis sit vitae. Volutpat nonummy ipsum ac odio lacus pede. Mauris dui gravida luctus maecenas commodo fringilla vel. Sed tristique turpis vestibulum commodo et rhoncus.",
+        description: "Idi immay ka intulod love naggapo kadtoy balay hahahahaha",
         image: "images/love3.jpg"
     },
     5: {
         title: "Together",
-        description: "Praesent dapibus blandit nulla, sed sodales nisi sagittis malesuada. Fusce sollicitudin ante vitae massa porta fringilla. Maecenas mi lorem, scelerisque sed varius vestibulum, volutpat id risus. Sed condimentum leo id orci dictumst laoreet dolore.",
+        description: "Hihi photoshoot ta love after graduation pic, nga adda dumokdukol love ko hahahaha hays makapamiss",
         image: "images/love4.jpg"
     },
     6: {
         title: "Connection",
-        description: "Nam liber tempor cum soluta nobis est option cumque nihil impedit quo minus id quod maxime placeat facere possimus, sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",
+        description: "Buya ulit sine my lovee hahahah",
         image: "images/love5.jpg"
     },
     7: {
         title: "Bloom",
-        description: "Nulla mi lacinia est, vel adipiscing mi lacinia sit. Sed non odio. Suspendisse suscipit eros non leo posuere convallis. Nullam in tortor. Phasellus molestie nunc sit amet nisi bibendum, non dictumst magna facilisis. Aliquam erat volutpat.",
+        description: "Idjay candon love ko idi adda iti convention yu my love nga dimmagdagas kapay idjay balay sa  tas napan ta nag kape in libre nak hahaha",
         image: "images/love6.jpg"
     },
     8: {
         title: "Sparkle",
-        description: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. At vero eos et accusamus et iusto odio dignissimos.",
+        description: "Hays, LDR na tayo here love ko, awan mt pic ta nga ag VC nga mayat love. Mamiss kan love ko huhu agawid kan.",
         image: "images/love7.jpg"
     }
 };
