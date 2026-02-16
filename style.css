@@ -1,0 +1,483 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffd4e5 0%, #ffb3d9 50%, #ff6ec7 100%);
+    min-height: 100vh;
+    animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background: linear-gradient(135deg, #ffd4e5 0%, #ffb3d9 50%, #ff6ec7 100%);
+    }
+    50% {
+        background: linear-gradient(135deg, #ffb3d9 0%, #ff6ec7 50%, #ffd4e5 100%);
+    }
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: slideInDown 1s ease;
+}
+
+h1 {
+    font-size: 3em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.5em;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bouquet Container */
+.bouquet-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 50px 0;
+    animation: bounceIn 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(50px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Flower Styles */
+.flower {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    top: 30px;
+    margin-left: -40px;
+    animation: sway 3s ease-in-out infinite;
+}
+
+.flower:hover {
+    animation: sway 1.5s ease-in-out infinite;
+    filter: brightness(1.2);
+}
+
+@keyframes sway {
+    0%, 100% {
+        transform: rotateZ(-5deg);
+    }
+    50% {
+        transform: rotateZ(5deg);
+    }
+}
+
+.petal {
+    position: absolute;
+    width: 25px;
+    height: 40px;
+    border-radius: 50% 50% 50% 0;
+    background-color: inherit;
+    left: 27.5px;
+    top: 10px;
+    transform-origin: 12.5px 30px;
+}
+
+.petal:nth-child(1) {
+    transform: rotateZ(0deg);
+}
+
+.petal:nth-child(2) {
+    transform: rotateZ(72deg);
+}
+
+.petal:nth-child(3) {
+    transform: rotateZ(144deg);
+}
+
+.petal:nth-child(4) {
+    transform: rotateZ(216deg);
+}
+
+.petal:nth-child(5) {
+    transform: rotateZ(288deg);
+}
+
+.center {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #ffeb3b;
+    border-radius: 50%;
+    left: 32.5px;
+    top: 32.5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Flower Colors */
+.red-flower .petal {
+    background-color: #ff1744;
+}
+
+.pink-flower .petal {
+    background-color: #ff69b4;
+}
+
+.light-pink-flower .petal {
+    background-color: #ffb6c1;
+}
+
+.white-flower .petal {
+    background-color: #fff;
+}
+
+/* Flower Positions */
+.flower-offset-1 {
+    left: 30%;
+    top: 50px;
+    animation-delay: 0.3s;
+}
+
+.flower-offset-2 {
+    left: 70%;
+    top: 40px;
+    animation-delay: 0.6s;
+}
+
+.flower-offset-3 {
+    left: 20%;
+    top: 80px;
+    animation-delay: 0.9s;
+}
+
+.flower-offset-4 {
+    left: 80%;
+    top: 90px;
+    animation-delay: 1.2s;
+}
+
+.flower-offset-5 {
+    left: 35%;
+    top: 120px;
+    animation-delay: 1.5s;
+}
+
+/* Stems */
+.stem {
+    position: absolute;
+    width: 2px;
+    height: 200px;
+    background: linear-gradient(180deg, transparent 0%, #2d5016 50%, #1a3d0a 100%);
+    left: 50%;
+    top: 100px;
+    margin-left: -1px;
+    z-index: -1;
+}
+
+.stem-2 {
+    left: 45%;
+    top: 110px;
+    transform: skewX(-5deg);
+}
+
+.stem-3 {
+    left: 55%;
+    top: 105px;
+    transform: skewX(5deg);
+}
+
+/* Leaves */
+.leaf {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    background-color: #2d5016;
+    border-radius: 50% 50% 50% 0;
+    z-index: -1;
+}
+
+.leaf-1 {
+    left: 30%;
+    top: 180px;
+    transform: rotateZ(-45deg);
+}
+
+.leaf-2 {
+    left: 70%;
+    top: 200px;
+    transform: rotateZ(-135deg);
+}
+
+.leaf-3 {
+    left: 35%;
+    top: 250px;
+    transform: rotateZ(45deg);
+}
+
+/* Bouquet Wrap (Ribbon) */
+.wrap {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(90deg, #d81b60 0%, #f06292 50%, #d81b60 100%);
+    bottom: 60px;
+    left: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.wrap::before,
+.wrap::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 60px;
+    background: linear-gradient(90deg, #d81b60 0%, #f06292 50%, #d81b60 100%);
+    border-radius: 50%;
+    top: 40px;
+}
+
+.wrap::before {
+    left: 30%;
+    transform: skewX(-20deg);
+}
+
+.wrap::after {
+    right: 30%;
+    transform: skewX(20deg);
+}
+
+/* Message */
+.message {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.3em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1.5s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#romantic-text {
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+/* Floating Hearts */
+.hearts-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    bottom: -50px;
+    opacity: 0.7;
+}
+
+.floating-heart {
+    animation: float 6s ease-in infinite;
+    left: var(--left);
+    animation-delay: var(--delay);
+}
+
+@keyframes float {
+    0% {
+        opacity: 0;
+        transform: translateY(0) rotateZ(0deg);
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh) rotateZ(360deg);
+    }
+}
+
+/* Heart Shape Using CSS */
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 27px;
+    background-color: #ff1744;
+    border-radius: 18px 18px 0 0;
+    top: 0;
+}
+
+.heart::before {
+    left: 15px;
+    transform: rotate(-45deg);
+    transform-origin: 0 27px;
+}
+
+.heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 15px 27px;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 0.9em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery Button */
+.gallery-btn {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #d81b60 0%, #f06292 100%);
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(216, 27, 96, 0.4);
+    transition: all 0.3s ease;
+    z-index: 100;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    letter-spacing: 1px;
+}
+
+.gallery-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(216, 27, 96, 0.6);
+    background: linear-gradient(135deg, #f06292 0%, #d81b60 100%);
+}
+
+.gallery-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1.2em;
+    }
+
+    .bouquet-container {
+        width: 250px;
+        height: 350px;
+    }
+
+    .flower {
+        width: 60px;
+        height: 60px;
+        margin-left: -30px;
+    }
+
+    .petal {
+        width: 20px;
+        height: 30px;
+        left: 20px;
+        transform-origin: 10px 25px;
+    }
+
+    .center {
+        width: 12px;
+        height: 12px;
+        left: 24px;
+        top: 24px;
+    }
+
+    .stem {
+        height: 150px;
+    }
+
+    .heart {
+        width: 20px;
+        height: 20px;
+    }
+
+    .heart::before,
+    .heart::after {
+        width: 12px;
+        height: 18px;
+    }
+}
