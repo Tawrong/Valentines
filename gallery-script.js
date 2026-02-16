@@ -3,62 +3,42 @@ const imageData = {
     1: {
         title: "Love",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. Ut sit amet vulputate felis. Vivamus nec turpis ut odio venenatis laoreet. Duis in pellentesque magna. Suspendisse potenti. Donec tincidunt eros in tempor volutpat. Maecenas dignissim lorem vel eros fermentum, a auctor lectus molestie.",
-        gradient: "linear-gradient(135deg, #ff6b9d 0%, #c44569 100%)",
-        svg: '<path d="M50 85 Q30 70 20 55 Q10 40 20 25 Q35 10 50 20 Q65 10 80 25 Q90 40 80 55 Q70 70 50 85" fill="white" opacity="0.7"/>'
+        image: "images/love.jpg"
     },
     2: {
-        title: "Romance",
-        description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-        svg: '<circle cx="50" cy="50" r="30" fill="white" opacity="0.7"/><circle cx="50" cy="50" r="20" fill="#f5576c" opacity="0.7"/>'
-    },
-    3: {
         title: "Warmth",
         description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-        gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
-        svg: '<rect x="20" y="20" width="60" height="60" rx="10" fill="white" opacity="0.7"/>'
+        image: "images/love2.jpg"
     },
-    4: {
+    3: {
         title: "Passion",
         description: "Wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquid ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore.",
-        gradient: "linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%)",
-        svg: '<polygon points="50,10 90,90 10,90" fill="white" opacity="0.7"/>'
+        image: "images/love2.jpg"
     },
-    5: {
+    4: {
         title: "Joy",
         description: "Vel eu felis aperiam, nonummy nibh fringilla semper wisi in mauris sed lobortis sit vitae. Volutpat nonummy ipsum ac odio lacus pede. Mauris dui gravida luctus maecenas commodo fringilla vel. Sed tristique turpis vestibulum commodo et rhoncus.",
-        gradient: "linear-gradient(135deg, #ffa751 0%, #ffe259 100%)",
-        svg: '<circle cx="50" cy="50" r="40" fill="none" stroke="white" stroke-width="8" opacity="0.7"/>'
+        image: "images/love3.jpg"
     },
-    6: {
+    5: {
         title: "Together",
         description: "Praesent dapibus blandit nulla, sed sodales nisi sagittis malesuada. Fusce sollicitudin ante vitae massa porta fringilla. Maecenas mi lorem, scelerisque sed varius vestibulum, volutpat id risus. Sed condimentum leo id orci dictumst laoreet dolore.",
-        gradient: "linear-gradient(135deg, #fd6e6e 0%, #ff9a56 100%)",
-        svg: '<path d="M30 50 L50 30 L70 50 L60 50 L60 70 L40 70 L40 50 Z" fill="white" opacity="0.7"/>'
+        image: "images/love4.jpg"
     },
-    7: {
+    6: {
         title: "Connection",
         description: "Nam liber tempor cum soluta nobis est option cumque nihil impedit quo minus id quod maxime placeat facere possimus, sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",
-        gradient: "linear-gradient(135deg, #ff006e 0%, #8338ec 100%)",
-        svg: '<circle cx="35" cy="50" r="15" fill="white" opacity="0.7"/><circle cx="65" cy="50" r="15" fill="white" opacity="0.7"/>'
+        image: "images/love5.jpg"
     },
-    8: {
+    7: {
         title: "Bloom",
         description: "Nulla mi lacinia est, vel adipiscing mi lacinia sit. Sed non odio. Suspendisse suscipit eros non leo posuere convallis. Nullam in tortor. Phasellus molestie nunc sit amet nisi bibendum, non dictumst magna facilisis. Aliquam erat volutpat.",
-        gradient: "linear-gradient(135deg, #fbf0e7 0%, #ff9a56 50%, #ff6a88 100%)",
-        svg: '<path d="M50 10 Q60 30 70 50 Q60 70 50 90 Q40 70 30 50 Q40 30 50 10" fill="white" opacity="0.7"/>'
+        image: "images/love6.jpg"
     },
-    9: {
+    8: {
         title: "Sparkle",
         description: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. At vero eos et accusamus et iusto odio dignissimos.",
-        gradient: "linear-gradient(135deg, #ffb088 0%, #ff9a56 50%, #ff6b9d 100%)",
-        svg: '<polygon points="50,15 61,35 82,35 65,50 73,70 50,55 27,70 35,50 18,35 39,35" fill="white" opacity="0.7"/>'
-    },
-    10: {
-        title: "Forever",
-        description: "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores.",
-        gradient: "linear-gradient(135deg, #ffa751 0%, #ffe259 50%, #ffde59 100%)",
-        svg: '<path d="M50 20 Q70 30 75 50 Q70 70 50 80 Q30 70 25 50 Q30 30 50 20 Z" fill="white" opacity="0.7" stroke="white" stroke-width="3"/>'
+        image: "images/love7.jpg"
     }
 };
 
@@ -68,7 +48,7 @@ const modalClose = document.querySelector('.modal-close');
 const modalTitle = document.getElementById('modalTitle');
 const modalDescription = document.getElementById('modalDescription');
 const modalImagePlaceholder = document.querySelector('.modal-image-placeholder');
-const modalSvg = document.getElementById('modalSvg');
+const modalImage = document.getElementById('modalImage');
 const modalContent = document.querySelector('.modal-content');
 
 // Track modal state to prevent double clicks
@@ -95,8 +75,8 @@ function openModal(itemId) {
     // Update modal content before showing
     modalTitle.textContent = data.title;
     modalDescription.textContent = data.description;
-    modalImagePlaceholder.style.background = data.gradient;
-    modalSvg.innerHTML = data.svg;
+    modalImage.src = data.image;
+    modalImage.alt = data.title;
     
     // Show modal with animation
     modal.classList.add('show');
