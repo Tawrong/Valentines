@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Art</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        body {
+            
+            background-color: rgb(190, 188, 188);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Courier New', monospace;
+            overflow: auto;
+        }
+        
+        #art {
+            color: black;
+            font-size: 6px;
+            line-height: 1.1;
+            white-space: pre;
+            font-weight: bold;
+            letter-spacing: 1px;
+            padding: 10px;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            overflow: auto;
+        }
+        
+        .slider-container {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 2px solid #fff;
+            z-index: 1000;
+        }
+        
+        .slider-container label {
+            color: #fff;
+            font-size: 14px;
+            margin-right: 10px;
+            font-family: Arial, sans-serif;
+        }
+        
+        input[type="range"] {
+            width: 150px;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+        
+        .brightness-value {
+            color: #fff;
+            font-size: 12px;
+            margin-left: 10px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="art"></div>
+    
+    <div class="slider-container">
+        <label for="brightnessSlider">Brightness:</label>
+        <input type="range" id="brightnessSlider" min="0" max="255" value="128" step="5">
+        <span class="brightness-value"><span id="brightnessValue">128</span></span>
+    </div>
+
+    <script>
+        const text = "I Love You My Love";
+        const textLength = text.length;
+        let textIndex = 0;
+
+        // ASCII gradient for better facial detail recognition
+        const asciiChars = ['@', '#', 'B', '8', '&', 'M', 'W', 'm', '$', 'o', '*', '+', '=', '-', ':', '.', ' '];
+        const textChars = text.split('');
+
+        function getChar(brightness) {
+            // Map brightness (0-255) to ASCII characters
+            const index = Math.floor((brightness / 255) * (asciiChars.length - 1));
+            return asciiChars[Math.max(0, Math.min(asciiChars.length - 1, index))];
+        }
+
+        function getTextChar() {
+            const char = text[textIndex % textLength];
+            textIndex++;
+            return char;
+        }
+
+        function imageToAscii(imagePath, brightnessAdjust = 128) {
+            const img = new Image();
+            img.crossOrigin = "Anonymous";
+            
+            img.onload = function() {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                
+                // Higher resolution for maximum clarity
+                const width = 300; // Significantly increased for clarity
+                const height = Math.floor(300 * 0.453); // Maintain aspect ratio
+                
+                canvas.width = width;
+                canvas.height = height;
+                
+                // Draw image on canvas
+                ctx.drawImage(img, 0, 0, width, height);
+                
+                // Get image data
+                const imageData = ctx.getImageData(0, 0, width, height);
+                const data = imageData.data;
+                
+                let asciiArt = '';
+                let charIndex = 0;
+                
+                // Process each pixel
+                for (let i = 0; i < data.length; i += 4) {
+                    const pixelIndex = i / 4;
+                    
+                    // Get RGB values
+                    const r = data[i];
+                    const g = data[i + 1];
+                    const b = data[i + 2];
+                    const a = data[i + 3];
+                    
+                    // Skip transparent pixels
+                    if (a === 0) {
+                        asciiArt += ' ';
+                    } else {
+                        // Calculate brightness (luminance) with inverted scale for better contrast
+                        let brightness = (r * 0.299 + g * 0.587 + b * 0.114);
+                        
+                        // Adjust brightness based on slider
+                        brightness = brightness + (brightnessAdjust - 128);
+                        brightness = Math.max(0, Math.min(255, brightness));
+                        
+                        // Use ASCII gradient for darker areas (face details)
+                        // Use text for lighter areas (fill)
+                        if (brightness < 50) {
+                            // Very dark areas - use darkest ASCII
+                            asciiArt += getChar(brightness);
+                        } else if (brightness < 220) {
+                            // Mid to dark areas - use ASCII gradient for detail
+                            asciiArt += getChar(brightness);
+                        } else {
+                            // Light areas - fill with text
+                            asciiArt += getTextChar();
+                        }
+                    }
+                    
+                    charIndex++;
+                    
+                    // Add newline at end of each row
+                    if ((pixelIndex + 1) % width === 0) {
+                        asciiArt += '\n';
+                    }
+                }
+                
+                // Display ASCII art
+                document.getElementById('art').textContent = asciiArt;
+            };
+            
+            img.onerror = function() {
+                document.getElementById('art').textContent = 'Error loading image';
+            };
+            
+            img.src = imagePath;
+        }
+
+        // Start the conversion
+        let currentBrightness = 125;
+        imageToAscii('love3.jpg', currentBrightness);
+        
+        // Slider event listener
+        document.getElementById('brightnessSlider').addEventListener('input', function(e) {
+            currentBrightness = parseInt(e.target.value);
+            document.getElementById('brightnessValue').textContent = currentBrightness;
+            imageToAscii('love3.jpg', currentBrightness);
+        });
+    </script>
+</body>
+</html>

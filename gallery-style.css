@@ -569,3 +569,35 @@ body {
         font-size: 0.8em;
     }
 }
+
+/* Button Styling */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.ascii-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #ff1744 0%, #d81b60 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(255, 23, 68, 0.4);
+    transition: all 0.3s ease;
+    border: 2px solid white;
+}
+
+.ascii-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 23, 68, 0.6);
+    background: linear-gradient(135deg, #d81b60 0%, #ff1744 100%);
+}
+
+.ascii-btn:active {
+    transform: translateY(-1px);
+}
